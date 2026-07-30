@@ -26,6 +26,7 @@
       <a href="#proceso">Proceso</a>
       <a href="#producto">Producto</a>
       <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
       <a href="#pedido">Pedido</a>
     </nav>
     <a class="btn btn-ghost header-wa" href="https://wa.me/573173644621?text=Hola%20Camilo%2C%20quiero%20más%20información%20sobre%20el%20café%20de%20Finca%20La%20Gloria" target="_blank" rel="noopener">
@@ -131,7 +132,7 @@
           <span class="step-num">06</span>
           <div class="step-body">
             <h3>Empaque en finca</h3>
-            <p>Se empaca fresco, en bolsas de 250 g, listo para viajar de la finca directo a tu taza.</p>
+            <p>Se empaca fresco, en bolsas de 250 g y 500 g, listo para viajar de la finca directo a tu taza.</p>
           </div>
           <figure class="step-photo">
             <img src="img/producto-detalle.png" alt="Bolsa de café Finca La Gloria ya empacada, variedad Bourbon Rosado" loading="lazy">
@@ -191,8 +192,8 @@
               <dd>Natural</dd>
             </div>
             <div class="ficha-item">
-              <dt>Contenido</dt>
-              <dd>250 g</dd>
+              <dt>Presentaciones</dt>
+              <dd>250 g y 500 g</dd>
             </div>
             <div class="ficha-item ficha-wide">
               <dt>Caficultor</dt>
@@ -205,7 +206,7 @@
       <div class="galeria">
         <figure>
           <img src="img/producto-tres-bolsas.png" alt="Tres bolsas de café Finca La Gloria, variedad Bourbon Rosado" loading="lazy">
-          <figcaption>Cada lote se empaca fresco en bolsas de 250 g.</figcaption>
+          <figcaption>Cada lote se empaca fresco en bolsas de 250 g y 500 g.</figcaption>
         </figure>
         <figure>
           <img src="img/mata-cafe.jpg" alt="Mata de café cargada de cerezas Bourbon Rosado en Finca La Gloria" loading="lazy">
@@ -233,7 +234,7 @@
         </video>
       </div>
 
-      <div class="foto-grid">
+      <div class="foto-row">
         <img src="img/galeria-recepcion.jpg" alt="Recepción de la cosecha del día bajo techo, con vista al valle de Vegalarga" loading="lazy">
         <img src="img/galeria-cereza-1.jpg" alt="Cerezas de café Bourbon Rosado maduras en racimo" loading="lazy">
         <img src="img/galeria-flores.jpg" alt="Flores blancas del cafeto en plena floración" loading="lazy">
@@ -247,13 +248,47 @@
     </div>
   </section>
 
+  <section class="ubicacion" id="ubicacion">
+    <div class="wrap">
+      <p class="eyebrow">Ubicación</p>
+      <h2 class="section-title">Aquí es donde se produce</h2>
+      <p class="ubicacion-sub">Vegalarga, Huila — a una hora de Neiva, en las montañas donde crece este café.</p>
+      <div class="mapa-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Vegalarga,+Huila,+Colombia&output=embed"
+          width="100%"
+          height="420"
+          style="border:0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación aproximada de Finca La Gloria en Vegalarga, Huila">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <section class="pedido" id="pedido">
     <div class="wrap">
       <p class="eyebrow">Agenda tu pedido</p>
       <h2 class="section-title">Arma tu pedido y confírmalo por WhatsApp</h2>
-      <p class="pedido-sub">Elige cantidad y molido. Al enviar, se abre WhatsApp con tu pedido ya escrito para Camilo — solo confirmas y coordinan la entrega.</p>
+      <p class="pedido-sub">Elige presentación, molido y cantidad. Al enviar, se abre WhatsApp con tu pedido ya escrito para Camilo — solo confirmas y coordinan la entrega.</p>
 
       <form class="pedido-form" id="pedido-form">
+        <div class="form-row">
+          <span class="form-label">Presentación</span>
+          <div class="pill-group" role="radiogroup" aria-label="Presentación de la bolsa">
+            <label class="pill">
+              <input type="radio" name="presentacion" value="250 g" checked>
+              <span>Bolsa 250 g</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="presentacion" value="500 g">
+              <span>Bolsa 500 g</span>
+            </label>
+          </div>
+        </div>
+
         <div class="form-row">
           <span class="form-label">Molido</span>
           <div class="pill-group" role="radiogroup" aria-label="Tipo de molido">
@@ -273,7 +308,7 @@
         </div>
 
         <div class="form-row">
-          <label class="form-label" for="cantidad">Cantidad de bolsas de 250 g</label>
+          <label class="form-label" for="cantidad">Cantidad de bolsas</label>
           <div class="stepper">
             <button type="button" class="stepper-btn" id="menos" aria-label="Restar una bolsa">−</button>
             <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="20" inputmode="numeric">

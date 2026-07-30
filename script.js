@@ -19,11 +19,17 @@ function molidoSeleccionado() {
   return checked ? checked.value : "Grano entero";
 }
 
+function presentacionSeleccionada() {
+  const checked = form.querySelector('input[name="presentacion"]:checked');
+  return checked ? checked.value : "250 g";
+}
+
 function actualizarResumen() {
   const cantidad = Math.max(1, parseInt(cantidadInput.value, 10) || 1);
+  const presentacion = presentacionSeleccionada();
   const molido = molidoSeleccionado();
   resumenTexto.textContent =
-    `${cantidad} ${bolsaLabel(cantidad)} de 250 g · Bourbon Rosado · ${molido}`;
+    `${cantidad} ${bolsaLabel(cantidad)} de ${presentacion} · Bourbon Rosado · ${molido}`;
 }
 
 btnMenos.addEventListener("click", () => {
@@ -39,7 +45,7 @@ btnMas.addEventListener("click", () => {
 });
 
 cantidadInput.addEventListener("input", actualizarResumen);
-form.querySelectorAll('input[name="molido"]').forEach((el) => {
+form.querySelectorAll('input[name="molido"], input[name="presentacion"]').forEach((el) => {
   el.addEventListener("change", actualizarResumen);
 });
 
@@ -48,6 +54,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const cantidad = Math.max(1, parseInt(cantidadInput.value, 10) || 1);
+  const presentacion = presentacionSeleccionada();
   const molido = molidoSeleccionado();
   const nombre = form.nombre.value.trim();
   const entrega = form.entrega.value.trim();
@@ -63,7 +70,7 @@ form.addEventListener("submit", (event) => {
     "Hola Camilo! Quiero pedir café de Finca La Gloria:",
     "",
     `Bourbon Rosado — ${molido}`,
-    `Cantidad: ${cantidad} ${bolsaLabel(cantidad)} de 250 g`,
+    `Cantidad: ${cantidad} ${bolsaLabel(cantidad)} de ${presentacion}`,
     `Nombre: ${nombre}`,
   ];
 

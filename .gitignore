@@ -1,0 +1,10 @@
+# Fotos y videos originales (sin procesar) — no se necesitan para publicar el sitio
+CAFE.PNG
+CAFE2.PNG
+CAFE3.PNG
+WhatsApp Image*.jpeg
+WhatsApp Video*.mp4
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
