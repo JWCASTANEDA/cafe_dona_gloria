@@ -381,7 +381,7 @@ a { color: inherit; }
 .galeria {
   margin-top: 56px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .galeria figure { margin: 0; }
@@ -391,6 +391,9 @@ a { color: inherit; }
   font-size: 13.5px;
   color: var(--cafe-800);
   font-family: var(--font-mono);
+}
+@media (max-width: 900px) {
+  .galeria { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   .galeria { grid-template-columns: 1fr; }
